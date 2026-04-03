@@ -485,21 +485,3 @@ function animateTemperature() {
     tempValue.textContent = Math.floor(current);
   }, 50);
 }
-
-// Subtle parallax effect on mouse move when active
-document.addEventListener("mousemove", (e) => {
-  if (!promoSection.classList.contains("active")) return;
-
-  const card = document.querySelector(".promo-card");
-  const xAxis = (window.innerWidth / 2 - e.pageX) / 60;
-  const yAxis = (window.innerHeight / 2 - e.pageY) / 60;
-
-  card.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-});
-
-// Reset card transform when not hovering
-document
-  .querySelector(".promo-card")
-  .addEventListener("mouseleave", function () {
-    this.style.transform = "perspective(1000px) rotateY(0) rotateX(0)";
-  });
