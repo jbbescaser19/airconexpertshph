@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="products.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -29,10 +30,12 @@
           <span>Aircon <strong>Experts</strong> PH</span>
         </a>
         <ul class="nav__links">
-          <li><a href="#promoSection">Promo</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#why-us">Why Us</a></li>
-          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#promoSection">Special Offers</a></li>
+          <li><a href="#services">Our Expertise</a></li>
+          <li><a href="#products">Our Products</a></li>
+          <li><a href="#why-us">Why Partner With Us</a></li>
+          <li><a href="#foundation">Our Foundation</a></li>
+          <li><a href="#testimonials">Client Feedback</a></li>
           <li><a href="#contact" class="nav__cta">Message Us Now</a></li>
         </ul>
         <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
@@ -40,10 +43,12 @@
         </button>
       </div>
       <div class="nav__mobile" id="mobileMenu">
-        <a href="#promoSection">Promo</a>
-        <a href="#services">Services</a>
-        <a href="#why-us">Why Us</a>
-        <a href="#testimonials">Reviews</a>
+        <a href="#promoSection">Special Offers</a>
+        <a href="#services">Our Expertise</a>
+        <a href="#products">Our Products</a>
+        <a href="#why-us">Why Partner With Us</a>
+        <a href="#foundation">Our Foundation</a>
+        <a href="#testimonials">Client Feedback</a>
         <a href="#contact">Message Us Now</a>
       </div>
     </nav>
@@ -386,6 +391,149 @@
       </div>
     </section>
 
+    <!-- PRODUCTS -->
+
+    <section class="productSection" id="products">
+      <div class="catalog-topbar">
+        <div class="topbar__right">
+          <div class="topbar__badge">
+            <span class="topbar__badge-dot"></span>
+            <span>View-Only Catalog</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── STICKY CATEGORY NAV ──────────────────────────────────── -->
+      <nav class="cat-nav" id="cat-nav">
+        <div class="cat-nav__inner">
+          <a href="#daikin" class="cat-nav__item active">
+            <span class="cat-icon">🌬</span> Daikin
+            <span class="cat-nav__count">4</span>
+          </a>
+          <a href="#midea" class="cat-nav__item">
+            <span class="cat-icon">❄</span> Midea Split Type
+            <span class="cat-nav__count">5</span>
+          </a>
+          <a href="#carrier" class="cat-nav__item">
+            <span class="cat-icon">🏠</span> Carrier Split Type
+            <span class="cat-nav__count">4</span>
+          </a>
+          <a href="#floormount" class="cat-nav__item">
+            <span class="cat-icon">🔷</span> Floor Mounted
+            <span class="cat-nav__count">3</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- ── HERO BANNER ──────────────────────────────────────────── -->
+      <div class="catalog-hero">
+        <div class="catalog-hero__inner">
+          <div class="catalog-hero__tag">❄ 2025 Price List – View Only</div>
+          <h1 class="catalog-hero__title">
+            Beat the Heat with <span>Unbeatable Prices</span>
+          </h1>
+          <p class="catalog-hero__sub">
+            Browse our curated collection of premium air conditioners. Inquire
+            directly for the best deals — no middlemen, certified installers.
+          </p>
+          <div class="catalog-hero__stats">
+            <div class="hero-stat">
+              <div class="hero-stat__num">3</div>
+              <div class="hero-stat__label">Top Brands</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat__num">16</div>
+              <div class="hero-stat__label">Products</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat__num">Up to 30%</div>
+              <div class="hero-stat__label">Savings</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat__num">Free</div>
+              <div class="hero-stat__label">Installation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CATALOG MAIN ─────────────────────────────────────────── -->
+      <main class="catalog-main" id="catalog-main"></main>
+
+      <!-- ── MODAL ───────────────────────────────────────────────── -->
+      <div
+        class="modal-overlay"
+        id="modal-overlay"
+        onclick="closeModalOutside(event)"
+      >
+        <div class="modal" id="modal">
+          <button class="modal__close" onclick="closeModal()">✕</button>
+          <div class="modal__layout">
+            <div class="modal__img-panel">
+              <div id="modal-img" class="modal__product-icon"></div>
+              <div class="modal__img-right">
+                <div class="modal__img-brand">
+                  <span class="modal__img-brand-dot"></span>
+                  <span id="modal-img-brand"></span>
+                </div>
+                <div class="modal__img-discount" id="modal-img-discount"></div>
+              </div>
+            </div>
+            <div class="modal__content-panel">
+              <div class="modal__header">
+                <div class="modal__brand-tag" id="modal-brand"></div>
+                <div class="modal__name" id="modal-name"></div>
+                <div class="modal__spec" id="modal-spec"></div>
+              </div>
+
+              <!-- HP variant selector inside modal -->
+              <div class="modal__variants-block" id="modal-variants-block">
+                <div class="modal__variants-label">Select Capacity</div>
+                <div class="modal__variants-row" id="modal-variants-row"></div>
+              </div>
+
+              <div class="modal__pricing-block">
+                <div class="modal__price-main">
+                  <div class="modal__srp-label">SRP (Original Price)</div>
+                  <div class="modal__srp" id="modal-srp"></div>
+                  <div class="modal__price" id="modal-price"></div>
+                </div>
+                <div class="modal__savings-pill" id="modal-discount"></div>
+              </div>
+
+              <div class="modal__features">
+                <div class="modal__features-label">What's Included</div>
+                <div class="modal__features-grid" id="modal-features"></div>
+              </div>
+
+              <div class="modal__cta-section">
+                <div class="modal__cta-label">
+                  📩 Interested? Send us a message
+                </div>
+                <div class="modal__ctas">
+                  <a
+                    href="https://l.messenger.com/l.php?u=http%3A%2F%2Fmessenger.com%2Ft%2F941024985770992&h=AT5I9LV8CTQK-k_bMa_idXYXzaZnUiSwQHJAWXaaO-u_AypE9cPSLRNAR4IyOmB8R1SWWkTemBeS4zyfxxMo6aCoNpJ5pX6AHbw3t1UpCV9G_s0GifhNjkvsh27J974r8JUZ9g"
+                    target="_blank"
+                    class="modal__btn modal__btn--messenger"
+                  >
+                    <span class="modal__btn-icon">💬</span>
+                    <span class="modal__btn-text">
+                      <span class="modal__btn-title">Messenger</span>
+                      <span class="modal__btn-sub">Reply in minutes</span>
+                    </span>
+                  </a>
+                </div>
+                <p class="modal__note">
+                  🔒 View only — No checkout. Prices may change. Inquire for
+                  availability.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- WHY CHOOSE US -->
     <section class="why-us section" id="why-us">
       <div class="container">
@@ -464,29 +612,164 @@
       </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats-band">
-      <div class="container">
-        <div class="stats-band__grid">
-          <div class="stat-item">
-            <div class="stat-item__num" data-count="2500">0</div>
-            <div class="stat-item__label">Happy Customers</div>
+    <!--FOUNDATIONS-->
+    <section class="about-puzzle-section" id="foundation">
+      <div class="accent-shape accent-shape-1"></div>
+      <div class="accent-shape accent-shape-2"></div>
+
+      <div class="puzzle-container animate-in">
+        <!-- Floating Section Header -->
+        <div class="section-header-float">
+          <div class="section-tag">Who We Are</div>
+          <div class="section-title-main">About Aircon Experts</div>
+        </div>
+
+        <!-- Connecting Lines -->
+        <div class="connecting-line line-h"></div>
+        <div class="connecting-line line-v"></div>
+
+        <!-- HISTORY - Top Left -->
+        <div class="puzzle-block history-block">
+          <div class="history-images">
+            <div class="history-main-img">
+              <img
+                src="images/history.png"
+                alt="HVAC Technicians at work"
+                class="parallax-img"
+              />
+            </div>
+            <div class="history-circle-img">
+              <img
+                src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=80"
+                alt="Technician portrait"
+              />
+            </div>
           </div>
-          <div class="stat-item">
-            <div class="stat-item__num" data-count="8">0</div>
-            <div class="stat-item__label">Years in Business</div>
+          <div class="history-content">
+            <div class="block-label">Our Story</div>
+            <h3 class="block-title">History</h3>
+            <p class="block-text">
+              Founded in 2018, we bring over a decade of experience delivering
+              reliable, high-quality cooling solutions for residential,
+              commercial, and industrial spaces.
+            </p>
           </div>
-          <div class="stat-item">
-            <div class="stat-item__num" data-count="98">0</div>
-            <div class="stat-item__label">% Satisfaction Rate</div>
+        </div>
+
+        <!-- MISSION - Top Right -->
+        <div class="puzzle-block mission-block">
+          <div class="mission-images">
+            <div class="mission-main-img">
+              <img
+                src="images/mission.png"
+                alt="Quality AC installation"
+                class="parallax-img"
+              />
+            </div>
           </div>
-          <div class="stat-item">
-            <div class="stat-item__num" data-count="5">0</div>
-            <div class="stat-item__label">Min Avg Response</div>
+          <div class="mission-content">
+            <div class="block-label">What We Do</div>
+            <h3 class="block-title">Mission</h3>
+            <p class="block-text">
+              Shall provide an expert knowledge and services on the products
+              capable to make their families and businesses comfortable,
+              healthy, safe and environmentally responsible.
+            </p>
+          </div>
+        </div>
+
+        <!-- VISION - Bottom Left -->
+        <div class="puzzle-block vision-block">
+          <div class="vision-images">
+            <div class="vision-main-img">
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+                alt="Modern office comfort"
+              />
+            </div>
+            <div class="vision-float-card">
+              <div class="vision-stat-number">7+</div>
+              <div class="vision-stat-label">Years of Trust</div>
+            </div>
+          </div>
+          <div class="vision-content">
+            <div class="block-label">Where We're Headed</div>
+            <h3 class="block-title">Vision</h3>
+            <p class="block-text">
+              To deliver the comfort cooling system that meets the client’s
+              requirements with the reasonable cost and good services.
+            </p>
+          </div>
+        </div>
+
+        <!-- CORE VALUES - Bottom Right -->
+        <div class="puzzle-block values-block">
+          <div class="values-header">
+            <div class="block-label">What Guides Us</div>
+            <h3 class="block-title">Core Values</h3>
+          </div>
+          <div class="values-grid">
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Long-term Relationships</h4>
+                <p>Building lasting partnerships</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  ></polygon>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Quality Service</h4>
+                <p>Excellence in every job</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Environmental Care</h4>
+                <p>Sustainable solutions</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Professional Integrity</h4>
+                <p>Honest, transparent work</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- STATS -->
 
     <!-- TESTIMONIALS -->
     <section class="testimonials section" id="testimonials">
@@ -575,7 +858,15 @@
         </div>
       </div>
     </section>
+    <section class="logo-showcase">
+      <div class="showcase-header">
+        <h2>Premium Brands We Service</h2>
+      </div>
 
+      <div class="marquee-wrapper">
+        <div class="marquee-track" id="marqueeTrack"></div>
+      </div>
+    </section>
     <!-- CTA -->
     <section class="cta section" id="contact">
       <div class="cta__bg"></div>
@@ -620,17 +911,21 @@
     <footer class="footer">
       <div class="container">
         <div class="footer__inner">
+          <!-- BRAND -->
           <div class="footer__brand">
-            <a href="#" class="nav__logo"
-              ><span class="nav__logo-icon"
-                ><img src="logo.png" alt="logo img" /></span
-              ><span>Aircon <strong>Experts</strong> PH</span></a
-            >
+            <a href="#" class="nav__logo">
+              <span class="nav__logo-icon">
+                <img src="logo.png" alt="logo img" />
+              </span>
+              <span>Aircon <strong>Experts</strong> PH</span>
+            </a>
             <p>
               Your trusted aircon partner in the Philippines. Fast, reliable,
               and affordable.
             </p>
           </div>
+
+          <!-- SERVICES -->
           <div class="footer__links">
             <h5>Services</h5>
             <ul>
@@ -640,6 +935,8 @@
               <li><a href="#services">Freon Charging</a></li>
             </ul>
           </div>
+
+          <!-- SOCIAL MEDIA -->
           <div class="footer__socialmedia">
             <h5>Follow Us</h5>
             <a
@@ -661,7 +958,7 @@
             </a>
 
             <a
-              href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F_u%2Fairconexpertsph12%3Figsh%3DMTYwZmlzNGxhcjU5cg%253D%253D%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExMzd6M2J6NVRrSlh0TzJLRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4CtyvsAF63ppSDZenomslAXjazuemKT5yNl3T170mG6QjzrelSYb29dLrIwQ_aem_vidzuvLJxz-osRguhJRe1A&h=AT4ehWxP1oNbvzL8_kyRPW0BWrJuDLJoEiwznkeEz-1pnTXmjS0zONpFq0xMjTg1F4T1K1wmHxuW79p7wpVOqJjDe1OMIpc-kTLYPSCrh77htWnbWqpktMiHHuj1vVKpISRaMA"
+              href="https://www.instagram.com/_u/airconexpertsph12/"
               class="footer__contact-link"
               target="_blank"
             >
@@ -672,26 +969,27 @@
                 fill="currentColor"
               >
                 <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.428.403a4.92 4.92 0 0 1 1.79 1.034 4.92 4.92 0 0 1 1.034 1.79c.163.458.349 1.258.403 2.428.058 1.266.07 1.645.07 4.849s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.428a4.902 4.902 0 0 1-1.034 1.79 4.902 4.902 0 0 1-1.79 1.034c-.458.163-1.258.349-2.428.403-1.266.058-1.645.07-4.849.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.428-.403a4.92 4.92 0 0 1-1.79-1.034 4.92 4.92 0 0 1-1.034-1.79c-.163-.458-.349-1.258-.403-2.428-.058-1.266-.07-1.645-.07-4.849s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.428a4.902 4.902 0 0 1 1.034-1.79 4.902 4.902 0 0 1 1.79-1.034c.458-.163 1.258-.349 2.428-.403 1.266-.058 1.645-.07 4.849-.07zM12 0C8.741 0 8.332.013 7.052.072 5.775.13 4.679.34 3.757.684a6.92 6.92 0 0 0-2.513 1.64A6.92 6.92 0 0 0 .684 4.837C.34 5.759.13 6.855.072 8.132.013 9.412 0 9.821 0 12s.013 2.588.072 3.868c.058 1.277.268 2.373.612 3.295a6.916 6.916 0 0 0 1.64 2.513 6.916 6.916 0 0 0 2.513 1.64c.922.344 2.018.554 3.295.612C9.412 23.987 9.821 24 12 24s2.588-.013 3.868-.072c1.277-.058 2.373-.268 3.295-.612a6.92 6.92 0 0 0 2.513-1.64 6.92 6.92 0 0 0 1.64-2.513c.344-.922.554-2.018.612-3.295C23.987 14.588 24 14.179 24 12s-.013-2.588-.072-3.868c-.058-1.277-.268-2.373-.612-3.295a6.916 6.916 0 0 0-1.64-2.513 6.916 6.916 0 0 0-2.513-1.64C18.241.34 17.145.13 15.868.072 14.588.013 14.179 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.428.403a4.92 4.92 0 0 1 1.79 1.034 4.92 4.92 0 0 1 1.034 1.79c.163.458.349 1.258.403 2.428.058 1.266.07 1.645.07 4.849s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.428a4.902 4.902 0 0 1-1.034 1.79 4.902 4.902 0 0 1-1.79 1.034c-.458.163-1.258.349-2.428.403-1.266.058-1.645.07-4.849.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.428-.403a4.92 4.92 0 0 1-1.79-1.034 4.92 4.92 0 0 1-1.034-1.79c-.163-.458-.349-1.258-.403-2.428-.058-1.266-.07-1.645-.07-4.849s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.428a4.902 4.902 0 0 1 1.034-1.79 4.902 4.902 0 0 1 1.79-1.034c.458-.163 1.258-.349 2.428-.403 1.266-.058 1.645-.07 4.849-.07zM12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"
                 />
               </svg>
               Instagram
             </a>
 
             <a
-              href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.tiktok.com%2F%40aircon.experts.ph%3F_r%3D1%26_t%3DZS-95F2V4qIEOT%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExMzd6M2J6NVRrSlh0TzJLRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5i-6Dex6ilXTMH2aWbEPWpHhi_VD47izbKqNODCzVpjYmZCHlrgttG5vvIag_aem_uvurYblZALfaWQaat3uuSQ&h=AT4l2TrgoBH-OoZPj7Yb5JN4WPRPFkbnpSrUPEUhCYJtY0AP7s8DRFgSagNShdrwmjrcWy2Y_mcUIN1KlZtjqSTC5FvzEEfasHi8fGt5e7EvvKXwhZ-CDgZh8O1DvvuYbrbIKg"
+              href="https://www.tiktok.com/@aircon.experts.ph"
               class="footer__contact-link"
               target="_blank"
             >
               <span class="tiktok">【ꚠ】</span>
-
-              Tiktok
+              TikTok
             </a>
           </div>
+
+          <!-- CONTACT -->
           <div class="footer__contact">
             <h5>Contact Us</h5>
             <a
-              href="https://l.messenger.com/l.php?u=http%3A%2F%2Fmessenger.com%2Ft%2F941024985770992&h=AT5I9LV8CTQK-k_bMa_idXYXzaZnUiSwQHJAWXaaO-u_AypE9cPSLRNAR4IyOmB8R1SWWkTemBeS4zyfxxMo6aCoNpJ5pX6AHbw3t1UpCV9G_s0GifhNjkvsh27J974r8JUZ9g"
+              href="https://www.messenger.com/t/941024985770992"
               class="footer__contact-link"
               target="_blank"
             >
@@ -707,6 +1005,7 @@
               </svg>
               Messenger
             </a>
+
             <button class="footer__contact-link">
               <svg
                 width="16"
@@ -725,7 +1024,35 @@
               0999-377-2086 / 0918-454-9781
             </button>
           </div>
+
+          <!-- LOCATION -->
+          <div class="footer__location">
+            <h5>Location</h5>
+            <a
+              href="https://maps.app.goo.gl/xxG37pmR3s8uemU36"
+              class="footer__contact-link"
+              target="_blank"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              View Location at<br />
+              123 Main St, San Pablo City, Laguna, Philippines
+            </a>
+          </div>
         </div>
+
+        <!-- FOOTER BOTTOM -->
         <div class="footer__bottom">
           <p>© 2025 Aircon Experts PH. All rights reserved.</p>
           <p>Made with ❤️ for comfort-loving Filipinos</p>
