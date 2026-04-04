@@ -1010,7 +1010,7 @@ const sections = [
   {
     id: "floormount",
     label: "Heavy-Duty · Commercial Grade",
-    title: 'Floor Mounted <span class="brand-logo">CARRIER</span>',
+    title: '<span class="brand-logo">CARRIER</span> Floor Mounted',
     sub: "Powerful floor-standing units for large spaces — offices, showrooms, and more",
     info: ["🏢 Commercial", "💪 High Power"],
   },
