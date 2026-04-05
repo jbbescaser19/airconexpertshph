@@ -1,0 +1,123 @@
+/* ============================================================
+   AIRCON EXPERTS PH – services.css (SERVICES SECTION)
+   ============================================================ */
+
+/* ── SERVICES ───────────────────────────────────────────── */
+.services {
+  background: var(--gray-50);
+}
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--gray-100);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--trans),
+    box-shadow var(--trans),
+    border-color var(--trans);
+  opacity: 0;
+  transform: translateY(24px);
+}
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    box-shadow var(--trans),
+    border-color var(--trans);
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(37, 99, 235, 0.12);
+  border-color: var(--blue-200);
+}
+.service-card__icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+.service-card p {
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
+.service-card__link {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--blue-500);
+  transition:
+    color var(--trans),
+    gap var(--trans);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.service-card__link:hover {
+  color: var(--blue-700);
+  gap: 0.5rem;
+}
+
+.svc-divider {
+  height: 1px;
+  background: var(--gray-100);
+  margin: 0.5rem 0 0.7rem;
+}
+
+/* tags */
+.svc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.svc-tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--blue-600);
+  background: var(--blue-100);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.svc-tagline {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--blue-500);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.1rem;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,86 @@
+/* ============================================================
+   AIRCON EXPERTS PH – why-us.css (WHY CHOOSE US SECTION)
+   ============================================================ */
+
+/* ── WHY US ─────────────────────────────────────────────── */
+.why-us {
+  background: var(--white);
+}
+.why-us__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: start;
+}
+.why-us__left .section-title {
+  text-align: left;
+}
+.why-us__left .section-sub {
+  margin: 0;
+  text-align: left;
+}
+.why-us__right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.why-card {
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+  border: 1px solid var(--gray-100);
+  transition:
+    transform var(--trans),
+    box-shadow var(--trans);
+  opacity: 0;
+  transform: translateY(20px);
+}
+.why-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    box-shadow var(--trans);
+}
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.why-card__num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--blue-900);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+.why-card__content h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 0.4rem;
+}
+.why-card__content p {
+  font-size: 0.85rem;
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .why-us__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .why-us__left .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-us__right {
+    grid-template-columns: 1fr;
+  }
+}

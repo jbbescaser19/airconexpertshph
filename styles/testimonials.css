@@ -1,0 +1,426 @@
+/* ============================================================
+   AIRCON EXPERTS PH – testimonials.css (TESTIMONIALS, CTA, FOOTER, LOGO SHOWCASE)
+   ============================================================ */
+
+/* ── TESTIMONIALS ───────────────────────────────────────── */
+.testimonials {
+  background: var(--gray-50);
+}
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.chat-bubble {
+  display: flex;
+  gap: 0.9rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.3rem;
+  border: 1px solid var(--gray-100);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--trans),
+    box-shadow var(--trans);
+  opacity: 0;
+  transform: translateY(20px);
+}
+.chat-bubble.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    box-shadow var(--trans);
+}
+.chat-bubble:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.chat-bubble__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: var(--white);
+  flex-shrink: 0;
+}
+.chat-bubble__body {
+  flex: 1;
+}
+.chat-bubble__name {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-bubble__name span {
+  color: #f59e0b;
+  font-size: 0.75rem;
+}
+.chat-bubble__text {
+  font-size: 0.87rem;
+  color: var(--gray-700);
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+.chat-bubble__time {
+  font-size: 0.72rem;
+  color: var(--gray-300);
+  text-align: right;
+}
+
+/* ── LOGO SHOWCASE ──────────────────────────────────────────────── */
+.logo-showcase {
+  width: 100%;
+  background: #ffffff;
+  padding: 40px 0;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  height: 250px;
+}
+
+.showcase-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.showcase-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+}
+
+.showcase-header p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* MARQUEE */
+.marquee-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* FADE EDGES */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+/* TRACK */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 35s linear infinite;
+  will-change: transform;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* CARD */
+.brand-card {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 60px;
+  margin: 0 32px;
+  background: #f8f9fa;
+  border-radius: 20px;
+  min-width: 220px;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: scale(1.05);
+  background: #f0f1f2;
+}
+
+/* LOGO */
+.brand-logo {
+  height: 48px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.brand-card:hover .brand-logo {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .logo-showcase {
+    padding: 40px 0;
+  }
+
+  .brand-card {
+    padding: 28px 40px;
+    margin: 0 20px;
+    min-width: 160px;
+  }
+
+  .brand-logo {
+    height: 36px;
+  }
+
+  .marquee-wrapper::before,
+  .marquee-wrapper::after {
+    width: 60px;
+  }
+}
+@media (max-width: 480px) {
+  /* Container smaller */
+  .logo-showcase {
+    height: 130px;
+    padding: 20px 0;
+  }
+
+  /* Text smaller */
+  .showcase-header h2 {
+    font-size: 16px;
+  }
+
+  .showcase-header p {
+    font-size: 12px;
+  }
+
+  /* Card smaller */
+  .brand-card {
+    padding: 16px 20px;
+    margin: 0 12px;
+    min-width: 110px;
+    border-radius: 12px;
+  }
+
+  /* Logo smaller */
+  .brand-logo {
+    height: 24px;
+    max-width: 90px;
+  }
+
+  /* Fade edges smaller */
+  .marquee-wrapper::before,
+  .marquee-wrapper::after {
+    width: 40px;
+  }
+}
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .brand-card {
+    margin: 0;
+  }
+}
+
+/* ── CTA ────────────────────────────────────────────────── */
+.cta {
+  position: relative;
+  background: linear-gradient(135deg, var(--blue-900), #071220);
+  overflow: hidden;
+}
+.cta__bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 70% at 50% 50%,
+    rgba(34, 211, 238, 0.1) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.cta__inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  margin: 0.8rem 0 1rem;
+}
+.cta__sub {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+.cta__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.cta__note {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.04em;
+}
+
+/* ── FOOTER ─────────────────────────────────────────────── */
+.footer {
+  background: var(--gray-900);
+  padding: 4rem 0 2rem;
+}
+.footer__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+.footer__brand p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 0.8rem;
+  max-width: 260px;
+  line-height: 1.7;
+}
+.footer__brand .nav__logo {
+  color: var(--white);
+}
+.footer__brand .nav__logo strong {
+  color: var(--blue-400);
+}
+.footer__links h5,
+.footer__contact h5,
+.footer__socialmedia h5,
+.footer__location h5 {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.footer__links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.footer__links a {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color var(--trans);
+}
+.footer__links a:hover {
+  color: var(--white);
+}
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.footer__contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: color var(--trans);
+}
+.footer__contact-link:hover {
+  color: var(--white);
+}
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.footer__bottom p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer__brand {
+    grid-column: auto;
+  }
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cta__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
