@@ -417,10 +417,7 @@ const products = [
     name: "Optima",
     icon: "❄",
     section: "carrier",
-    badges: [
-      '<span class="badge badge--bestseller">⭐ Best Seller</span>',
-      '<span class="badge badge--energy">🌿 Eco</span>',
-    ],
+    badges: ['<span class="badge badge--energy">🌿 Eco</span>'],
     features: [
       "Free Installation up to 10ft",
       "Smart Sleep Comfort Mode",
@@ -676,7 +673,7 @@ const products = [
   {
     id: "matrix-mxc-lat",
     brand: "Matrix",
-    name: "MXC-LAT Series",
+    name: "MATRIX INVERTER SPLIT TYPE AIRCON",
     icon: "❄",
     section: "matrix",
     badges: [
