@@ -217,7 +217,7 @@ const products = [
         srp: "₱46,200",
         price: "₱37,302",
         discount: "-19% OFF",
-        image: "images/daikin/dSmartQueen.png",
+        image: "images/daikin/dsmartQueen.png",
       },
       {
         label: "1.5HP",
@@ -225,7 +225,7 @@ const products = [
         srp: "₱51,900",
         price: "₱41,849",
         discount: "-19% OFF",
-        image: "images/daikin/dSmartQueen.png",
+        image: "images/daikin/dsmartQueen.png",
       },
       {
         label: "2.0HP",
@@ -233,7 +233,7 @@ const products = [
         srp: "₱66,500",
         price: "₱52,250",
         discount: "-21% OFF",
-        image: "images/daikin/dSmartQueen.png",
+        image: "images/daikin/dsmartQueen.png",
       },
       {
         label: "2.5HP",
@@ -241,7 +241,7 @@ const products = [
         srp: "₱77,300",
         price: "₱60,383",
         discount: "-22% OFF",
-        image: "images/daikin/dSmartQueen.png",
+        image: "images/daikin/dsmartQueen.png",
       },
       {
         label: "3.0HP",
@@ -249,7 +249,7 @@ const products = [
         srp: "₱107,700",
         price: "₱82,967",
         discount: "-23% OFF",
-        image: "images/daikin/dSmartQueen.png",
+        image: "images/daikin/dsmartQueen.png",
       },
     ],
   },
