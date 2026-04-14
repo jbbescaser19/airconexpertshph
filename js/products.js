@@ -707,8 +707,8 @@ const products = [
         image: "images/hisense/hisense.png",
       },
       {
-        label: "3.0HP",
-        spec: "AS-30TR2RDJ · 3.0HP Full DC Inverter · 10,220-240V/60Hz · Indoor/Outdoor",
+        label: "3.5HP",
+        spec: "AS-30TR2RDJ · 3.5HP Full DC Inverter · 10,220-240V/60Hz · Indoor/Outdoor",
         srp: "₱87,995",
         price: "₱50,499",
         discount: "-43% OFF",
