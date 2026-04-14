@@ -22,7 +22,7 @@ const BRAND_WARRANTIES = {
   hisense: {
     compressor: "10 Years",
     pcb_fan_motor: "3 Years",
-    parts: "2 Years",
+    parts: "1 Years",
   },
   matrix: {
     compressor: "10 Years",
