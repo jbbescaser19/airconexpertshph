@@ -6,6 +6,8 @@
 .hero {
   position: relative;
   min-height: 100vh;
+  background: #0c1a2e;
+  background: linear-gradient(135deg, #0c1a2e 0%, #0f2645 50%, #0a1628 100%);
   background: linear-gradient(
     135deg,
     var(--blue-900) 0%,

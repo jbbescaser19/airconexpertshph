@@ -4,6 +4,7 @@
 
 .productSection {
   font-family: var(--font-body);
+  background: #f0f4fa;
   background: var(--catalog-bg);
   color: var(--gray-900);
   line-height: 1.6;

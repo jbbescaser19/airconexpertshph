@@ -4,6 +4,7 @@
 
 /* ── SERVICES ───────────────────────────────────────────── */
 .services {
+  background: #f8fafc;
   background: var(--gray-50);
 }
 .services__grid {

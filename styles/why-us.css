@@ -3,7 +3,10 @@
    ============================================================ */
 
 /* ── WHY US ─────────────────────────────────────────────── */
+/* ── WHY US ─────────────────────────────────────────────── */
 .why-us {
+  /* Fallback for browsers without CSS variables support */
+  background: #ffffff;
   background: var(--white);
 }
 .why-us__inner {
