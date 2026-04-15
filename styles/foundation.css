@@ -617,12 +617,19 @@
   transform: scale(1.1);
 }
 
-/* Responsive Design */
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+
+/* Tablet (1024px and below) */
 @media (max-width: 1024px) {
+  .about-puzzle-section {
+    min-height: auto;
+    padding: 4rem 1.5rem;
+  }
+
   .puzzle-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.25rem;
     height: auto;
     max-height: none;
   }
@@ -631,39 +638,21 @@
     position: relative;
     top: 0;
     margin-bottom: 2rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .section-title-main {
+    font-size: 1rem;
   }
 
   .history-images,
   .mission-images {
-    height: 250px;
-  }
-
-  .vision-block {
-    flex-direction: column;
-  }
-
-  .vision-images {
-    width: 100%;
-    height: 200px;
-  }
-
-  .connecting-line {
-    display: none;
-  }
-}
-
-@media (max-width: 640px) {
-  .about-puzzle-section {
-    padding: 1rem;
-  }
-
-  .puzzle-block {
-    padding: 1.5rem;
+    height: 220px;
   }
 
   .history-content {
     padding-left: 0;
-    padding-top: 80px;
+    padding-top: 100px;
   }
 
   .history-circle-img {
@@ -672,18 +661,414 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: auto;
-    top: 140px;
+    top: 160px;
   }
 
   .mission-content {
     padding-right: 0;
   }
 
+  .vision-block {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .vision-images {
+    width: 100%;
+    height: 200px;
+  }
+
+  .vision-content {
+    padding-left: 0;
+  }
+
+  .values-block {
+    padding: 2rem;
+  }
+
   .values-grid {
+    gap: 1rem;
+  }
+
+  .connecting-line {
+    display: none;
+  }
+}
+
+/* Small Tablet (768px and below) */
+@media (max-width: 768px) {
+  .about-puzzle-section {
+    padding: 3rem 1rem;
+  }
+
+  .puzzle-container {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .section-header-float {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 40px;
+  }
+
+  .section-tag {
+    font-size: 0.65rem;
+  }
+
+  .section-title-main {
+    font-size: 0.95rem;
+  }
+
+  .puzzle-block {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .history-images,
+  .mission-images {
+    height: 200px;
+    margin-bottom: 1.25rem;
+  }
+
+  .history-main-img,
+  .mission-main-img {
+    border-radius: 16px;
+  }
+
+  .history-content {
+    padding-top: 80px;
+  }
+
+  .history-circle-img {
+    width: 90px;
+    height: 90px;
+    top: 140px;
   }
 
   .block-title {
     font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .block-text {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  .mission-cutout {
+    border-radius: 14px;
+    box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.15),
+      0 0 0 2px white,
+      0 0 0 3px rgba(212, 165, 116, 0.3);
+  }
+
+  .vision-images {
+    height: 180px;
+  }
+
+  .vision-main-img {
+    border-radius: 16px;
+  }
+
+  .vision-float-card {
+    padding: 0.875rem 1rem;
+    border-radius: 14px;
+    min-width: 120px;
+    bottom: -10px;
+    right: -10px;
+  }
+
+  .vision-stat-number {
+    font-size: 1.75rem;
+  }
+
+  .vision-stat-label {
+    font-size: 0.7rem;
+  }
+
+  .values-block {
+    padding: 1.75rem;
+    border-radius: 20px;
+  }
+
+  .values-block .block-title {
+    font-size: 1.35rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.875rem;
+  }
+
+  .value-item {
+    padding: 0.875rem;
+    border-radius: 14px;
+    gap: 0.75rem;
+  }
+
+  .value-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .value-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .value-text h4 {
+    font-size: 0.85rem;
+  }
+
+  .value-text p {
+    font-size: 0.78rem;
+  }
+}
+
+/* Mobile (540px and below) - COMPACT LAYOUT */
+@media (max-width: 540px) {
+  .about-puzzle-section {
+    padding: 2.5rem 0.75rem;
+    min-height: auto;
+  }
+
+  .puzzle-container {
+    gap: 1rem;
+  }
+
+  .section-header-float {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 30px;
+    width: 90%;
+  }
+
+  .section-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+  }
+
+  .section-title-main {
+    font-size: 0.9rem;
+  }
+
+  .puzzle-block {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .history-block,
+  .mission-block,
+  .vision-block {
+    padding: 1.25rem;
+  }
+
+  .history-images,
+  .mission-images {
+    height: 160px;
+    margin-bottom: 1rem;
+  }
+
+  .history-main-img {
+    width: 80%;
+    border-radius: 14px;
+  }
+
+  .history-circle-img {
+    width: 70px;
+    height: 70px;
+    border-width: 3px;
+    top: 110px;
+    box-shadow:
+      0 6px 20px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+
+  .history-content {
+    padding-top: 50px;
+    padding-left: 0;
+  }
+
+  .block-label {
+    font-size: 0.6rem;
+    margin-bottom: 0.4rem;
+    gap: 0.35rem;
+  }
+
+  .block-label::before {
+    width: 15px;
+    height: 2px;
+  }
+
+  .block-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .block-text {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .mission-main-img {
+    width: 80%;
+    border-radius: 14px;
+  }
+
+  .mission-cutout {
+    width: 50%;
+    height: 60%;
+    border-radius: 12px;
+    box-shadow:
+      0 8px 20px rgba(0, 0, 0, 0.15),
+      0 0 0 2px white,
+      0 0 0 3px rgba(212, 165, 116, 0.3);
+  }
+
+  .mission-content {
+    padding-right: 0;
+  }
+
+  .vision-block {
+    gap: 1rem;
+  }
+
+  .vision-images {
+    height: 140px;
+  }
+
+  .vision-main-img {
+    border-radius: 14px;
+  }
+
+  .vision-float-card {
+    padding: 0.75rem 0.875rem;
+    border-radius: 12px;
+    min-width: 100px;
+    bottom: -8px;
+    right: -8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .vision-stat-number {
+    font-size: 1.5rem;
+  }
+
+  .vision-stat-label {
+    font-size: 0.65rem;
+    margin-top: 0.15rem;
+  }
+
+  .values-block {
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  }
+
+  .values-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .values-block .block-title {
+    font-size: 1.15rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 0.625rem;
+  }
+
+  .value-item {
+    padding: 0.75rem;
+    border-radius: 12px;
+    gap: 0.625rem;
+  }
+
+  .value-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .value-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .value-text h4 {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .value-text p {
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+
+  .accent-shape-1,
+  .accent-shape-2 {
+    display: none;
+  }
+}
+
+/* Small Mobile (380px and below) */
+@media (max-width: 380px) {
+  .about-puzzle-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .puzzle-block {
+    padding: 1rem;
+    border-radius: 14px;
+  }
+
+  .history-images,
+  .mission-images {
+    height: 140px;
+  }
+
+  .history-circle-img {
+    width: 60px;
+    height: 60px;
+    top: 100px;
+  }
+
+  .history-content {
+    padding-top: 35px;
+  }
+
+  .block-title {
+    font-size: 1.05rem;
+  }
+
+  .block-text {
+    font-size: 0.75rem;
+  }
+
+  .vision-images {
+    height: 120px;
+  }
+
+  .values-block {
+    padding: 1.25rem;
+  }
+
+  .values-block .block-title {
+    font-size: 1.05rem;
+  }
+
+  .value-item {
+    padding: 0.625rem;
+  }
+
+  .value-text h4 {
+    font-size: 0.78rem;
+  }
+
+  .value-text p {
+    font-size: 0.7rem;
   }
 }

@@ -689,12 +689,20 @@
   min-width: 3ch;
 }
 
-/* Responsive Design */
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+
+/* Tablet (968px and below) */
 @media (max-width: 968px) {
+  .promo-section {
+    min-height: auto;
+    padding: 3rem 1.5rem;
+  }
+
   .promo-card {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 2rem;
+    padding: 2.5rem;
+    width: 95%;
   }
 
   .promo-left,
@@ -714,7 +722,7 @@
   }
 
   .headline {
-    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
   }
 
   .includes-list {
@@ -724,63 +732,421 @@
   }
 
   .includes-list li {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .glow-orb-1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .glow-orb-2 {
+    width: 200px;
+    height: 200px;
   }
 }
 
-@media (max-width: 640px) {
+/* Small Tablet (768px and below) */
+@media (max-width: 768px) {
   .promo-section {
-    padding: 1rem;
+    padding: 2.5rem 1rem;
+    min-height: auto;
   }
 
   .promo-card {
-    padding: 1.5rem;
+    padding: 2rem;
+    gap: 1.75rem;
+    border-radius: 24px;
     width: 100%;
   }
 
-  .includes-list {
-    grid-template-columns: 1fr;
+  .frost-overlay {
+    border-radius: 24px;
+  }
+
+  .promo-left {
+    gap: 1.25rem;
+  }
+
+  .brand-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.875rem;
+  }
+
+  .headline {
+    font-size: 1.85rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
   }
 
   .price-section {
     padding: 1.25rem;
+    border-radius: 16px;
   }
 
-  .urgency-box::before {
-    position: static;
-    display: block;
-    margin-bottom: 0.5rem;
-    transform: scale(0);
+  .price-amount {
+    font-size: 2.75rem;
   }
 
-  .promo-section.active .urgency-box::before {
-    transform: scale(1);
+  .price-amount::after {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.5rem;
   }
 
-  .urgency-text,
-  .urgency-sub {
+  .free-install {
+    font-size: 0.9rem;
+  }
+
+  .promo-right {
+    gap: 1.25rem;
+  }
+
+  .includes-box {
+    padding: 1.25rem;
+    border-radius: 14px;
+  }
+
+  .includes-title {
+    font-size: 0.8rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .includes-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .includes-list li {
+    font-size: 0.8rem;
+    gap: 0.5rem;
+  }
+
+  .includes-list li::before {
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+  }
+
+  .fun-lines {
+    padding: 0.875rem 1rem;
+    border-radius: 10px;
+  }
+
+  .fun-lines p {
+    font-size: 0.85rem;
+  }
+
+  .urgency-box {
+    padding: 0.875rem 1.25rem;
+  }
+
+  .urgency-text {
+    font-size: 1rem;
     padding-left: 0;
+  }
+
+  .urgency-sub {
+    font-size: 0.75rem;
+    padding-left: 0;
+  }
+
+  .temp-indicator {
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .glow-orb-1,
+  .glow-orb-2 {
+    display: none;
+  }
+}
+
+/* Mobile (640px and below) - COMPACT LAYOUT */
+@media (max-width: 640px) {
+  .promo-section {
+    padding: 2rem 0.75rem;
+    min-height: auto;
+  }
+
+  .promo-card {
+    padding: 1.5rem;
+    gap: 1.25rem;
+    border-radius: 20px;
+    width: 100%;
+  }
+
+  .frost-overlay {
+    border-radius: 20px;
+  }
+
+  .promo-left {
+    gap: 1rem;
+  }
+
+  .brand-badge {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.75rem;
+    gap: 0.35rem;
+  }
+
+  .brand-badge::before {
+    font-size: 0.9rem;
+  }
+
+  .headline {
+    font-size: 1.5rem;
+    line-height: 1.15;
+  }
+
+  .headline .highlight {
+    margin-top: 0.15rem;
+  }
+
+  .emoji-fire {
+    font-size: 1.25rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .price-section {
+    padding: 1rem;
+    border-radius: 14px;
+    border-width: 1px;
+  }
+
+  .price-label {
+    font-size: 0.75rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .price-amount {
+    font-size: 2.25rem;
+  }
+
+  .price-amount::after {
+    font-size: 0.7rem;
+    padding: 0.12rem 0.4rem;
+    top: 0.3rem;
+    right: -2.5rem;
+  }
+
+  .free-install {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    gap: 0.35rem;
+  }
+
+  .promo-right {
+    gap: 1rem;
+  }
+
+  .includes-box {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .includes-title {
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+    gap: 0.35rem;
+  }
+
+  .includes-list {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .includes-list li {
+    font-size: 0.8rem;
+    gap: 0.5rem;
+    line-height: 1.35;
+  }
+
+  .includes-list li::before {
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+  }
+
+  .fun-lines {
+    padding: 0.75rem 0.875rem;
+    border-radius: 10px;
+  }
+
+  .fun-lines::before {
+    font-size: 1rem;
+    top: -10px;
+  }
+
+  .fun-lines p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .urgency-box {
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+  }
+
+  .urgency-text {
+    font-size: 0.95rem;
+  }
+
+  .urgency-sub {
+    font-size: 0.7rem;
+    margin-top: 0.15rem;
   }
 
   .temp-indicator {
     top: 1rem;
     right: 1rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .air-blast {
+    width: 300px;
+    height: 100px;
+    bottom: -50px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .promo-section {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .promo-card {
+    padding: 1.25rem;
+    gap: 1rem;
+    border-radius: 16px;
+  }
+
+  .frost-overlay {
+    border-radius: 16px;
+  }
+
+  .promo-left {
+    gap: 0.875rem;
+  }
+
+  .brand-badge {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.625rem;
+  }
+
+  .headline {
+    font-size: 1.35rem;
+  }
+
+  .tagline {
+    font-size: 0.85rem;
+  }
+
+  .price-section {
+    padding: 0.875rem;
+    border-radius: 12px;
+  }
+
+  .price-label {
+    font-size: 0.7rem;
+  }
+
+  .price-amount {
+    font-size: 2rem;
+  }
+
+  .free-install {
+    font-size: 0.8rem;
+  }
+
+  .promo-right {
+    gap: 0.875rem;
+  }
+
+  .includes-box {
+    padding: 0.875rem;
+    border-radius: 10px;
+  }
+
+  .includes-title {
+    font-size: 0.7rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .includes-list li {
+    font-size: 0.78rem;
+  }
+
+  .fun-lines {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .fun-lines p {
+    font-size: 0.78rem;
+  }
+
+  .urgency-box {
+    padding: 0.625rem 0.875rem;
+  }
+
+  .urgency-text {
+    font-size: 0.9rem;
+  }
+
+  .urgency-sub {
+    font-size: 0.65rem;
+  }
+
+  .temp-indicator {
+    font-size: 0.9rem;
+    gap: 0.35rem;
+  }
+}
+
+/* Extra Small Mobile (380px and below) */
+@media (max-width: 380px) {
+  .promo-card {
+    padding: 1rem;
+    border-radius: 14px;
+  }
+
+  .headline {
+    font-size: 1.2rem;
+  }
+
+  .price-amount {
+    font-size: 1.75rem;
+  }
+
+  .includes-list li {
+    font-size: 0.75rem;
   }
 }
 
 @media (max-height: 800px) {
+  .promo-section {
+    min-height: auto;
+    padding: 2rem 0.75rem;
+  }
+
   .promo-card {
     padding: 1.5rem;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .includes-list {
-    gap: 0.4rem;
+    gap: 0.35rem;
   }
 
   .fun-lines,
   .urgency-box {
-    padding: 0.875rem 1rem;
+    padding: 0.75rem 1rem;
   }
 }

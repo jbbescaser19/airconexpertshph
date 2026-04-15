@@ -844,18 +844,39 @@
 @media (max-width: 480px) {
   .hero {
     padding: 6rem 1rem 3rem;
+    min-height: auto;
   }
   .hero__headline {
     font-size: 2.2rem;
+  }
+  .hero__sub {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero__badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.875rem;
+    margin-bottom: 1rem;
+  }
+  .trust-badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
   }
   .ac {
     max-width: 280px;
   }
   .ac-remote {
     max-width: 280px;
+    padding: 1rem 1.25rem;
   }
   .power-btn {
     width: 60px;
     height: 60px;
+  }
+  .temp-display {
+    font-size: 1.75rem;
+  }
+  .aircon-hint {
+    font-size: 0.75rem;
   }
 }
